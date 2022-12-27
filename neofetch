@@ -4084,12 +4084,22 @@ print_ascii() {
     }
 
     # Colors.
+    ascii_data="${ascii_data//\$\{c0\}/$c0}"
     ascii_data="${ascii_data//\$\{c1\}/$c1}"
     ascii_data="${ascii_data//\$\{c2\}/$c2}"
     ascii_data="${ascii_data//\$\{c3\}/$c3}"
     ascii_data="${ascii_data//\$\{c4\}/$c4}"
     ascii_data="${ascii_data//\$\{c5\}/$c5}"
     ascii_data="${ascii_data//\$\{c6\}/$c6}"
+    ascii_data="${ascii_data//\$\{c7\}/$c7}"
+    ascii_data="${ascii_data//\$\{c8\}/$c8}"
+    ascii_data="${ascii_data//\$\{c9\}/$c9}"
+    ascii_data="${ascii_data//\$\{c10\}/$c10}"
+    ascii_data="${ascii_data//\$\{c11\}/$c11}"
+    ascii_data="${ascii_data//\$\{c12\}/$c12}"
+    ascii_data="${ascii_data//\$\{c13\}/$c13}"
+    ascii_data="${ascii_data//\$\{c14\}/$c14}"
+    ascii_data="${ascii_data//\$\{c15\}/$c15}"
 
     ((text_padding=ascii_len+gap))
     printf '%b\n' "$ascii_data${reset}"
@@ -4673,12 +4683,22 @@ strip_sequences() {
 # COLORS
 
 set_colors() {
+    c0="$(color "$0")${ascii_bold}"
     c1="$(color "$1")${ascii_bold}"
     c2="$(color "$2")${ascii_bold}"
     c3="$(color "$3")${ascii_bold}"
     c4="$(color "$4")${ascii_bold}"
     c5="$(color "$5")${ascii_bold}"
     c6="$(color "$6")${ascii_bold}"
+    c7="$(color "$7")${ascii_bold}"
+    c8="$(color "$8")${ascii_bold}"
+    c9="$(color "$9")${ascii_bold}"
+    c10="$(color "$10")${ascii_bold}"
+    c11="$(color "$11")${ascii_bold}"
+    c12="$(color "$12")${ascii_bold}"
+    c13="$(color "$13")${ascii_bold}"
+    c14="$(color "$14")${ascii_bold}"
+    c15="$(color "$15")${ascii_bold}"
 
     [[ "$color_text" != "off" ]] && set_text_colors "$@"
 }
